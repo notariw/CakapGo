@@ -1,0 +1,204 @@
+/* Hapus .card dan buat styling langsung di body dan kontennya */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+    width: 100vw;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 4vw;
+    border-bottom: 2px solid #e0e0e0;
+    height: 10vh;
+    min-height: 0px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.logo-icon {
+    width: 3vw;
+    height: 3vw;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 60px;
+    max-height: 60px;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: clamp(16px, 1.5vw, 24px);
+}
+
+.logo-text {
+    font-size: clamp(20px, 2vw, 32px);
+    font-weight: bold;
+    color: #2196F3;
+}
+
+.profile-icon {
+    width: 3vw;
+    height: 3vw;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 60px;
+    max-height: 60px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+}
+
+
+.brand {
+  margin-left: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+main {
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.instruction {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.question-box {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.answer-input {
+  padding: 16px;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 3px solid #ccc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.answer-input:focus {
+  border-color: #007bff;
+}
+
+.check-btn,
+.next-btn {
+  background: #22c55e;
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 12px 0;
+}
+
+.check-btn:hover,
+.next-btn:hover {
+  background: #16a34a;
+}
+
+.correct-progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+.correct-progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  transition: width 3s linear;
+}
+
+.feedback {
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.skip-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.skip-btn,
+.back-btn {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  color: #555;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 22px;
+  border-radius: 8px;
+}
+
+.skip-btn:hover,
+.back-btn:hover {
+  background: #e0e0e0;
+}
+
+/* Progress bar container at the top */
+.progress-bar-container {
+  width: 80%;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #7f56d9;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+
+.progress-text {
+  margin: 10px;
+  font-size: 16px;
+  color: #777;
+}

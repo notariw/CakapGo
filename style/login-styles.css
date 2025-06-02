@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    line-height: 1.6;
+}
+
+.main {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 4vw;
+}
+
+.right {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #2196F3, #9c88ff, #64b5f6);
+}
+
+.container {
+    padding: 4vh 3vw;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 3vh;
+    position: relative;
+}
+
+.container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #2196F3, #9c88ff);
+    border-radius: 2px;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    margin-bottom: 3vh;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 1.8vh 2vw;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    outline: none;
+    color: #333;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #2196F3;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    transform: translateY(-2px);
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 2vh 2vw;
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: clamp(1.1rem, 1.3vw, 1.2rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    margin-top: 1vh;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+    background: linear-gradient(135deg, #1976D2, #1565C0);
+}
+
+button[type="submit"]:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.container p {
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    color: #666;
+    margin-bottom: 1vh;
+}
+
+.container p a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.container p a:hover {
+    color: #1976D2;
+    text-decoration: underline;
+}
+
+.container p a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2196F3, #9c88ff);
+    transition: width 0.3s ease;
+}
+
+.container p a:hover::before {
+    width: 100%;
+}
+
+#login-msg {
+    min-height: 20px;
+    font-weight: 500;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    margin-top: 1vh;
+    padding: 1vh;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#login-msg:not(:empty) {
+    animation: slideIn 0.3s ease-out;
+}
+
+#login-msg[style*="color: green"] {
+    background: linear-gradient(135deg, #e8f5e8, #ffffff);
+    border: 1px solid #4caf50;
+    color: #2e7d32 !important;
+}
+
+#login-msg[style*="color: red"] {
+    background: linear-gradient(135deg, #ffebee, #ffffff);
+    border: 1px solid #f44336;
+    color: #c62828 !important;
+}
+
+/* Loading animation for form submission */
+.container form.loading button[type="submit"] {
+    background: linear-gradient(135deg, #bdbdbd, #9e9e9e);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.container form.loading button[type="submit"]::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main {
+        padding: 2vh 5vw;
+    }
+    
+    .container {
+        padding: 3vh 4vw;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+        padding: 2vh 4vw;
+    }
+    
+    button[type="submit"] {
+        padding: 2.5vh 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 1vh 3vw;
+    }
+    
+    .right {
+        border-radius: 15px;
+        max-width: 100%;
+    }
+    
+    .container {
+        padding: 3vh 5vw;
+    }
+    
+    .container h2 {
+        margin-bottom: 2vh;
+    }
+    
+    #loginForm {
+        gap: 1.5vh;
+        margin-bottom: 2vh;
+    }
+}
+
+/* Focus states for accessibility */
+input[type="email"]:focus,
+input[type="password"]:focus,
+button[type="submit"]:focus {
+    outline: 2px solid #2196F3;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .right {
+        border: 2px solid #333;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+        border-color: #333;
+    }
+    
+    button[type="submit"] {
+        background: #1976D2;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+    
+    .right {
+        background: #2d2d2d;
+        color: #e0e0e0;
+    }
+    
+    .container h2 {
+        color: #e0e0e0;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+        background: #3d3d3d;
+        border-color: #555;
+        color: #e0e0e0;
+    }
+    
+    input[type="email"]::placeholder,
+    input[type="password"]::placeholder {
+        color: #aaa;
+    }
+    
+    .container p {
+        color: #bbb;
+    }
+}
+
+/* Additional utility classes */
+.fade-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Form validation styles */
+input.error {
+    border-color: #f44336 !important;
+    background: #ffebee !important;
+    animation: shake 0.5s ease-in-out;
+}
+
+input.success {
+    border-color: #4caf50 !important;
+    background: #e8f5e8 !important;
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #2196F3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}

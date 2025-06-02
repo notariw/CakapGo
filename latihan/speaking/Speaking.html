@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Latihan Speaking - CakapGo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="speaking.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+      <a href="../../home.html" class="logo" style="text-decoration: none; color: inherit; cursor: pointer;">
+        <div class="logo-icon">C</div>
+        <span class="logo-text">CakapGo</span>
+      </a>
+      <div class="profile-icon"></div>
+    </header>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">Progress: 0/10</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="section-title">Latihan Speaking</div>
+    <div class="prompt-box" id="prompt">❓ Say something...</div>
+    <div class="timer" id="timer">Time left: 10s</div>
+    <button class="btn btn-start" id="startBtn">🎤 Start Speaking</button>
+    <div class="result" id="result">Transcript: ...</div>
+    <br/>
+    <button class="btn btn-back" onclick="window.location.href='difficulty.html'">←Back</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="speaking.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;  /* Tambahkan ini agar tidak ada margin default */
+    background-color: #324762;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Splits into two equal parts */
+    height: 100vh; /* Full height of viewport */
+    width: 100%;
+}
+
+.quote {
+    width: 70%;
+    margin: 0 20% 0 30%;
+    justify-content: center;
+    text-align: left;
+}
+.left, .right {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    text-align: center;
+    flex-direction: column;
+}
+
+.triangle-clip {
+    width: 100px;
+    height: 100px;
+    background: red;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 30% 0 20%;
+    text-align: center;
+    width: 300px; /* Atur lebar tetap supaya lebih rapi */
+}
+
+input {
+    width: 100%; /* Ubah dari 60% ke 100% agar lebih rata */
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box; /* Agar padding tidak menambah lebar */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+

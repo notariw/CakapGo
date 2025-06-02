@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>CakapGo - Latihan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="../../home.html" class="logo" style="text-decoration: none; color: inherit; cursor: pointer;">
+        <div class="logo-icon">C</div>
+        <span class="logo-text">CakapGo</span>
+      </a>
+      <div class="profile-icon"></div>
+    </header>
+  </div>
+
+  <div class="progress-bar-container">
+    <div id="progress-bar"></div>
+  </div>
+  <p id="progress-label" class="progress-text">Progress: 0.00%</p>
+
+  <main class="card">
+    <p class="instruction">Terjemahkan ke Inggris</p>
+    <div class="question-box" id="question">Loading...</div>
+
+    <input type="text" id="answer" placeholder="Type your answer here..." class="answer-input" />
+
+    <div class="correct-progress-container" id="correct-progress-container" style="display: none;">
+      <div class="correct-progress-bar" id="correct-progress-bar"></div>
+    </div>
+
+    <button class="check-btn" onclick="checkAnswer()">Check</button>
+    <p id="result" class="feedback"></p>
+    <button id="next-btn" class="next-btn" onclick="loadRandomQuestion()" style="display: none;">Next</button>
+
+
+    <div class="skip-row">
+      <button class="skip-btn" onclick="loadRandomQuestion()">Skip</button>
+      <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    </div>
+  </main>
+
+  <script src="latihan.js"></script>
+</body>
+</html>

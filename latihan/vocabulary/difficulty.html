@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pilih Tingkat Kesulitan - BiLingo</title>
+  <link rel="stylesheet" href="difficulty.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="../../home.html" class="logo" style="text-decoration: none; color: inherit; cursor: pointer;">
+        <div class="logo-icon">C</div>
+        <span class="logo-text">CakapGo</span>
+      </a>
+      <div class="profile-icon"></div>
+    </header>
+    <div class="lesson-section-title">Mengartikan kata & kalimat</div>
+
+<div class="lesson-container">
+  <div class="lesson-card beginner" id="easy" onclick="selectDifficulty('easy')">
+    <div class="card-content">
+      <h3 class="level-title">Beginner📝</h3>
+      <p class="level-desc">Pelajari kata-kata dasar dalam bahasa Inggris</p>
+      <div class="progress-bar">
+        <div class="progress" id="progress-bar-easy" style="width: 0%;"></div>
+      </div>
+      <p class="lesson-percent" id="lesson-count-easy">0%</p>
+    </div>
+  </div>
+
+  <div class="lesson-card intermediate" id="intermediate" onclick="selectDifficulty('intermediate')">
+    <div class="card-content">
+      <h3 class="level-title">Intermediate📝📝</h3>
+      <p class="level-desc">Tingkatkan kemampuan dengan kalimat yang lebih kompleks</p>
+      <div class="progress-bar">
+        <div class="progress" id="progress-bar-intermediate" style="width: 0%;"></div>
+      </div>
+      <p class="lesson-percent" id="lesson-count-intermediate">0%</p>
+    </div>
+  </div>
+
+  <div class="lesson-card hard" id="hard" onclick="selectDifficulty('hard')">
+    <div class="card-content">
+      <h3 class="level-title">Advanced📝📝📝</h3>
+      <p class="level-desc">Kuasi bahasa dengan kalimat kompleks untuk para ahli</p>
+      <div class="progress-bar">
+        <div class="progress" id="progress-bar-hard" style="width: 0%;"></div>
+      </div>
+      <p class="lesson-percent" id="lesson-count-hard">0%</p>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+
+  <script src="difficulty.js"></script>
+</body>
+</html>

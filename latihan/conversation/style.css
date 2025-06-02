@@ -1,0 +1,121 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  padding: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 4vw;
+  border-bottom: 2px solid #e0e0e0;
+  height: 10vh;
+  min-height: 0px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.logo-icon {
+  width: 3vw;
+  height: 3vw;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 60px;
+  max-height: 60px;
+  background-color: #2196F3;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: clamp(16px, 1.5vw, 24px);
+}
+
+.logo-text {
+  font-size: clamp(20px, 2vw, 32px);
+  font-weight: bold;
+  color: #2196F3;
+}
+
+.profile-icon {
+  width: 3vw;
+  height: 3vw;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 60px;
+  max-height: 60px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+.main-content {
+  max-width: 900px;
+  margin: 10px auto 20px 40px;
+  padding: 0px;
+  text-align: left;
+}
+
+h1 {
+  color: #2b4f81;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.instructions {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+  line-height: 1.6;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 300px;
+  margin-left: 40px;
+  margin-right: auto;
+}
+
+.instructions h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #1c3d6f;
+}
+
+.instructions ul {
+  padding-left: 20px;
+}
+
+.instructions ul li {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    margin: 20px;
+    padding-bottom: 120px;
+    font-size: 150px;
+  }
+}

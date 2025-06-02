@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pilih Tingkat Speaking - CakapGo</title>
+  <link rel="stylesheet" href="difficulty.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="../../home.html" class="logo" style="text-decoration: none; color: inherit; cursor: pointer;">
+        <div class="logo-icon">C</div>
+        <span class="logo-text">CakapGo</span>
+      </a>
+      <div class="profile-icon"></div>
+    </header>
+
+    <div class="lesson-section-title">Latihan Speaking</div>
+
+    <div class="lesson-container">
+      <div class="lesson-card beginner" id="easyBtn" onclick="selectDifficulty('easy')">
+        <div class="card-content">
+          <h3 class="level-title">Beginner🗣️</h3>
+          <p class="level-desc">Latihan dasar berbicara dalam Bahasa Inggris</p>
+          <div class="progress-bar">
+            <div class="progress" id="progress-bar-easy"></div>
+          </div>
+          <p class="lesson-percent" id="easyProgress">0%</p>
+        </div>
+      </div>
+
+      <div class="lesson-card intermediate locked" id="mediumBtn" onclick="selectDifficulty('medium')">
+        <div class="card-content">
+          <h3 class="level-title">Intermediate🗣️🗣️</h3>
+          <p class="level-desc">Latihan kalimat dan struktur menengah</p>
+          <div class="progress-bar">
+            <div class="progress" id="progress-bar-medium"></div>
+          </div>
+          <p class="lesson-percent" id="mediumProgress">0%</p>
+        </div>
+      </div>
+
+      <div class="lesson-card hard locked" id="hardBtn" onclick="selectDifficulty('hard')">
+        <div class="card-content">
+          <h3 class="level-title">Advanced🗣️🗣️🗣️</h3>
+          <p class="level-desc">Tantangan berbicara kompleks</p>
+          <div class="progress-bar">
+            <div class="progress" id="progress-bar-hard"></div>
+          </div>
+          <p class="lesson-percent" id="hardProgress">0%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="difficulty.js"></script>
+</body>
+</html>
